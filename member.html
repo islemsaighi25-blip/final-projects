@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership</title>
+    <link rel="stylesheet" href="projal.css">
+</head>
+<body>
+    <header>
+        <h1>Oxygen <span class="gym">Gym</span></h1>
+        <div class="member">
+            <nav>
+                <ul>
+                    <li><a href="home.html">HOME</a></li>
+                    <li><a href="class.html">CLASSES</a></li>
+                    <li><a href="#member">MEMBERSHIP</a></li>
+                    <li><a href="trainer.html">TRAINERS</a></li>
+                    <li><a href="contact.html">CONTACT</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Membership Plans Section -->
+        <section id="membership">
+            <h2>Membership Plans</h2>
+            <div class="plan-container">
+
+                <article class="plan"> 
+                    <h3>Bronze Plan (monthly)</h3>
+                    <p>Perfect for people who are just starting their fitness journey.</p>
+                    <dl>
+                        <dt>3 Days per Week</dt>
+                        <dd>Ideal for beginners who want to ease into a fitness routine.</dd>
+                        <dt>Basic workout guidance</dt>
+                        <dd>Access to our beginner-friendly workout plans and resources.</dd>
+                        <dt>Access to gym equipment</dt>
+                        <dd>Use of all standard gym equipment during your visits.</dd>
+                        <dt>Locker and shower access</dt>
+                        <dd>Convenient locker and shower facilities for your use.</dd>
+                    </dl>
+                </article>
+
+                <article class="plan">
+                    <h3>Silver Plan (quarterly)</h3>
+                    <p>For intermediate members who already have some gym experience.</p>
+                    <dl>
+                        <dt>4 - 5 Days per Week</dt>
+                        <dd>Recommended for intermediate fitness routines.</dd>
+                        <dt>Personalized workout routine</dt>
+                        <dd>Customized workout plans based on your fitness goals.</dd>
+                        <dt>Full gym access</dt>
+                        <dd>Unlimited access to all gym facilities and equipment.</dd>
+                    </dl>
+                </article>
+
+                <article class="plan">
+                    <h3>Gold Plan (yearly)</h3>
+                    <p>Designed for advanced athletes and serious professional trainers.</p>
+                    <dl>
+                        <dt>6 Days per Week</dt>
+                        <dd>Full weekly access for advanced training.</dd>
+                        <dt>Advanced training programs</dt>
+                        <dd>Specialized training programs for advanced athletes.</dd>
+                        <dt>Personal coach support</dt>
+                        <dd>One-on-one coaching sessions with our certified trainers.</dd>
+                        <dt>Sauna access</dt>
+                        <dd>Access to our premium sauna facilities.</dd>
+                    </dl>
+                </article>
+
+            </div>
+
+            <div class="note">
+                Note: higher tier membership includes previous tier benefits
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section id="registration">
+            <h2>Membership Registration</h2>
+            <form>
+                <fieldset>
+                    <legend>Member Information</legend>
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" placeholder="Date Of Birth" required>
+
+                    <label>Gender:</label>
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Female</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Select Your Plan</legend>
+                    <input type="radio" id="bronze" name="plan" value="bronze" required>
+                    <label for="bronze">Bronze</label>
+
+                    <input type="radio" id="silver" name="plan" value="silver">
+                    <label for="silver">Silver</label>
+
+                    <input type="radio" id="gold" name="plan" value="gold">
+                    <label for="gold">Gold</label>
+                </fieldset>
+
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms">I agree to the membership terms and conditions</label>
+
+                <input type="submit" value="Register">
+            </form>
+        </section>
+
+        <!-- Payment Section -->
+        <section id="payment">
+            <h2>Payment Methods</h2>
+            <form>
+                <fieldset>
+                    <legend>Select Payment Method</legend>
+                    <input type="radio" id="visa" name="payment" value="visa">
+                    <label for="visa">Credit Card</label>
+
+                    <input type="radio" id="mastercard" name="payment" value="mastercard">
+                    <label for="mastercard">Debit Card</label>
+
+                    <input type="radio" id="paypal" name="payment" value="paypal">
+                    <label for="paypal">PayPal</label>
+                </fieldset>
+
+                <input type="checkbox" id="payment_terms" name="payment_terms" required>
+                <label for="payment_terms">I agree to the payment terms and conditions</label>
+
+                <input type="submit" value="Proceed to Payment">
+            </form>
+        </section>
+
+    </main>
+</body>
+</html>
