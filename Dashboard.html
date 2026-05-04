@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,9 +6,41 @@
     <link rel="icon" type="image/png" href="gym1.avif">
     <title>Dash Board</title>
     <link rel="stylesheet" href="Pro.css">
+
+    <style>
+        
+        section {
+            width: 100%;
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            display: table;
+        }
+
+    
+        @media (min-width: 768px) {
+            main {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 2%;
+            }
+
+            h1 { width: 100%; }
+
+            section {
+                width: 48%; /* Two sections per row on PC */
+            }
+
+            table {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <aside>
+    <header>
         <nav>
             <ul>
                 <li><a href="#">Members</a></li>
@@ -18,54 +50,103 @@
                 <li><a href="#">Orders</a></li>
             </ul>
         </nav>
-    </aside>
+    </header>
+
     <main>
         <h1>Admin Dashboard</h1>
+        
         <section id="total_members">
             <p><strong>Total members is : </strong> 120 person</p>
         </section>
+        
         <section id="active_subscriptions">
             <p><strong>Active Subscriptions is : </strong>70</p>
         </section>
+        
         <section id="classes_today">
             <p><strong>Classes Today is : </strong>3</p>
         </section>
+        
         <section id="revenue_this_month">
             <p><strong>Revenue This Month : </strong>100000.00 DA</p>
         </section>
-        <table border="1">
-        <tr>
-            <th>Name</th>
-            <th>Date</th>
-            <th>plan</th>
 
-        </tr>
-        <tr>
-            <td> hamada</td>
-            <td>2024-06-01</td>
-            <td>Gold</td>
-        </tr>
-        <tr>
-            <td>salim</td>
-            <td>2024-06-02</td>
-            <td>Silver</td>
-        </tr>
-<tr>
-            <td>yazid</td>
-            <td>2024-06-03</td>
-            <td>Bronze</td> 
-</tr>
-<tr>   
-            <td>nabil</td>
-            <td>2024-06-04</td>
-            <td>Gold</td>
-</tr>
-<tr>   
-            <td>farid</td>
-            <td>2024-06-05</td>
-            <td>Silver</td>
-</tr>
-</table>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Plan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>hamada</td>
+                    <td>2024-06-01</td>
+                    <td>Gold</td>
+                </tr>
+                <tr>
+                    <td>salim</td>
+                    <td>2024-06-02</td>
+                    <td>Silver</td>
+                </tr>
+                <tr>
+                    <td>yazid</td>
+                    <td>2024-06-03</td>
+                    <td>Bronze</td> 
+                </tr>
+                <tr>   
+                    <td>nabil</td>
+                    <td>2024-06-04</td>
+                    <td>Gold</td>
+                </tr>
+                <tr>   
+                    <td>farid</td>
+                    <td>2024-06-05</td>
+                    <td>Silver</td>
+                </tr>
+            </tbody>
+        </table>
     </main>
+
+    <script>
+       
+        let links = document.querySelectorAll("nav ul li a");
+        links.forEach(link => {
+            link.onclick = function() {
+                alert("Navigating to: " + this.textContent);
+            };
+        });
+
+        
+        let btn = document.createElement("button");
+        btn.textContent = "Add Member";
+        document.querySelector("main").appendChild(btn);
+
+        btn.onclick = function() {
+            let name = prompt("Enter name:");
+            if (!name) {
+                alert("Error: Enter name!");
+                return; 
+            }
+
+            let date = prompt("Enter date:");
+            if (!date) {
+                alert("Error: Enter date!");
+                return; 
+            }
+
+            let plan = prompt("Enter plan:");
+            if (!plan) {
+                alert("Error: Enter plan!");
+                return;
+            }
+
+            let table = document.querySelector("tbody");
+            let row = table.insertRow();
+            row.innerHTML = `<td>${name}</td><td>${date}</td><td>${plan}</td>`;
+            alert("Done!");
+        };
+    </script>
 </body>
 </html>
